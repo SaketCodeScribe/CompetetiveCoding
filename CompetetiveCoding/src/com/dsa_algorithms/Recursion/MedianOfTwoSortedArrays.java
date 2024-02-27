@@ -15,11 +15,9 @@ public class MedianOfTwoSortedArrays {
 
     }
     public int findMedian(int[] nums1, int[] nums2, int l1, int r1, int l2, int r2, int k){
-        int la, mid1 = l1+(r1-l1+1)/2, lb, mid2 = l2+(r2-l2+1)/2, ra, rb;
+        int la, mid1 = l1+(r1-l1+1)/2, lb, mid2 = l2+(r2-l2+1)/2;
         la = mid1-l1;
         lb = mid2-l2;
-        ra = r1-mid1+1;
-        rb = r2-mid2+1;
 
         if(la == 0){
             if (k==1)
