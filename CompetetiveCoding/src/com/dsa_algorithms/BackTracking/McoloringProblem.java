@@ -30,7 +30,6 @@ public class McoloringProblem {
                 }
             }
         }
-        System.out.println(adj);
         for (i = 0; i < n; i++) {
             if (!vis[i]) {
                 for (int col = 1; col <= m; col++) {
