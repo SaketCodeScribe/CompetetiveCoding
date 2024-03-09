@@ -13,14 +13,14 @@ public class NumberofOperationstoMakeNetworkConnected {
         Arrays.fill(size, 1);
         IntStream.range(0, n).forEach(i -> par[i] = i);
         int edges = connections.length, disconnectedComponent = 0;
-        if(edges < n-1)
+        if (edges < n - 1)
             return -1;
-        for(int[] connection:connections){
+        for (int[] connection : connections) {
             union(connection[0], connection[1]);
         }
 
-        for(int i=0; i<n; i++){
-            if(par[i] == i)
+        for (int i = 0; i < n; i++) {
+            if (par[i] == i)
                 disconnectedComponent++;
         }
         return --disconnectedComponent;
