@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Stack;
 
 public class NextGreaterElementll {
-    public static int[] nextGreaterElementII(int []a) {
+    public static int[] nextGreaterElementII(int []a){
         int i = 0, n = a.length;
         int[] ans = new int[n];
         Arrays.fill(ans, -1);
