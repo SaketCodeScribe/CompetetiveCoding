@@ -6,6 +6,13 @@ import java.util.Stack;
 import java.util.stream.Collectors;
 
 public class RootToLeafPaths {
+    static class BinaryTreeNode{
+        int data;
+        BinaryTreeNode left, right;
+        public BinaryTreeNode(int data){
+            this.data = data;
+        }
+    }
     static List<String> ans;
     public static List<String> allRootToLeaf(BinaryTreeNode root) {
         // Write your code here.
