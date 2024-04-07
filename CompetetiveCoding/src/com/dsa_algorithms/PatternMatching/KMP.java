@@ -1,8 +1,8 @@
-package com.dsa_algorithms;
+package com.dsa_algorithms.PatternMatching;
 
 import java.util.*;
 
-public class PatternMatching {
+public class KMP {
     public int strStr(String haystack, String needle) {
         int i, j, m = haystack.length(), n = needle.length();
         int[] lps = new int[n];
