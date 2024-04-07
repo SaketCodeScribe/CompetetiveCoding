@@ -1,18 +1,18 @@
 package com.dsa_algorithms.Tree;
 
-class TreeNode<T>
-{
-    T data;
-    TreeNode<T> left;
-    TreeNode<T> right;
-
-    TreeNode(T data) {
-        this.data = data;
-        left = null;
-        right = null;
-    }
-}
 public class isHeightBalancedTree {
+    static class TreeNode<T>
+    {
+        T data;
+        TreeNode<T> left;
+        TreeNode<T> right;
+
+        TreeNode(T data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
     public static boolean isBalancedBT(TreeNode<Integer> root) {
         return isBalanced(root) != -1 ? true : false;
     }

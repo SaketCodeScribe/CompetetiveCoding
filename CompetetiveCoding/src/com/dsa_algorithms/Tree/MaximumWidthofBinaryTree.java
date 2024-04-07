@@ -2,18 +2,39 @@ package com.dsa_algorithms.Tree;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
 
-class Node{
-    int index;
-    TreeNode node;
-    public Node(TreeNode node, int index){
-        this.index = index;
-        this.node = node;
-    }
-}
+
 public class MaximumWidthofBinaryTree {
+    static class Node{
+        int index;
+        TreeNode node;
+        public Node(TreeNode node, int index){
+            this.index = index;
+            this.node = node;
+        }
+    }
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     public int widthOfBinaryTree(TreeNode root) {
-        Deque<Node> queue = new LinkedList<Node>();
+        Deque<Node> queue = new LinkedList<>();
         queue.add(new Node(root,1));
         int l, mxWidth = 1;
         Node node=null;

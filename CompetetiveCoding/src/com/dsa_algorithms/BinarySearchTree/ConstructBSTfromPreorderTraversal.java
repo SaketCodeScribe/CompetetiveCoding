@@ -1,6 +1,19 @@
 package com.dsa_algorithms.BinarySearchTree;
- commenting to ignore build fail
+
+
 public class ConstructBSTfromPreorderTraversal {
+     static class TreeNode
+     {
+         int val;
+         TreeNode left;
+         TreeNode right;
+
+         TreeNode(int data) {
+             this.val = data;
+             left = null;
+             right = null;
+         }
+     }
     int n;
     public TreeNode bstFromPreorder(int[] preorder) {
         n = preorder.length;

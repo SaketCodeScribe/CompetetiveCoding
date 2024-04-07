@@ -1,6 +1,18 @@
 package com.dsa_algorithms.Tree;
 
 public class LCA {
+    static class TreeNode
+    {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode(int data) {
+            this.val = data;
+            left = null;
+            right = null;
+        }
+    }
     TreeNode lca;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         lca = null;
