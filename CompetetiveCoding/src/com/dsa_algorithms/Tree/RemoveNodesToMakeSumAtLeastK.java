@@ -5,6 +5,14 @@ package com.dsa_algorithms.Tree;
  */
 
 public class RemoveNodesToMakeSumAtLeastK {
+    static class TreeNode{
+        int val;
+        TreeNode left, right;
+
+        public TreeNode(int data) {
+            val = data;
+        }
+    }
     public static TreeNode removeNodes(TreeNode root, int sum, int k) {
         if (root == null)
             return root;

@@ -5,6 +5,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class PostOrdertraversal {
+    static class TreeNode{
+        int val;
+        TreeNode left, right;
+    }
     public List<Integer> postorderTraversal(TreeNode root) {
         List<Integer> ans = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();

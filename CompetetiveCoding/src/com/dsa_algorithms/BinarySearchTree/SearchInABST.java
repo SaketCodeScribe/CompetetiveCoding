@@ -1,8 +1,12 @@
 package com.dsa_algorithms.BinarySearchTree;
 
 import java.util.Stack;
- commenting to ignore build fail
+
 public class SearchInABST {
+    static class TreeNode{
+        TreeNode left, right;
+        int val;
+    }
     /*
         recursion procedure
      */
@@ -10,8 +14,8 @@ public class SearchInABST {
         if (root == null || root.val == val)
             return root;
         if (root.val > val)
-            return searchBST(root.left, val);
-        return searchBST(root.right, val);
+            return searchBSTRecursion(root.left, val);
+        return searchBSTRecursion(root.right, val);
     }
     /*
         iteration procedure using stack.
