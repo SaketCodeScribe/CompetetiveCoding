@@ -1,4 +1,4 @@
-package com.dsa_algorithms.DynamicProgramming;
+package com.dsa_algorithms.Recursion;
 import java.util.*;
 public class DifferentWaystoAddParentheses {
 
