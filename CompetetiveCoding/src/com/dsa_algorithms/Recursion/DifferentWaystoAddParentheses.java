@@ -1,5 +1,8 @@
 package com.dsa_algorithms.Recursion;
 import java.util.*;
+/*
+    We need to iterate over all the solutions which kills the dp optimization, Hence, using dp is an overkill
+ */
 public class DifferentWaystoAddParentheses {
 
     Map<int[], List<Integer>> map;
