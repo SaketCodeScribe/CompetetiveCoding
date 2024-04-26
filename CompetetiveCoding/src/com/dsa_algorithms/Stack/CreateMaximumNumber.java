@@ -1,8 +1,6 @@
 package com.dsa_algorithms.Stack;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /*
     Here in merging, I'd to call greater method to decide for the next pointer. The reason can be understood from:
@@ -69,5 +67,22 @@ public class CreateMaximumNumber {
             b++;
         }
         return true;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        System.out.println(obj);
+        if (obj == this)
+            return true;
+        return false;
+    }
+
+    public static void main(String[] args) {
+        Map<CreateMaximumNumber, Integer> map = new Hashtable<>();
+        map.put(null, 6);
+        map.put(null, 7);
+        CreateMaximumNumber obj = new CreateMaximumNumber();
+        map.put(obj, 8);
+        System.out.println(map);
     }
 }
