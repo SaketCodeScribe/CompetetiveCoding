@@ -1,14 +1,16 @@
 package com.dsa_algorithms.Graph;
 
+import java.util.Arrays;
 import java.util.*;
-class FreedomTrail {
-    static class Pair<T, I>{
-        Integer ringIndex;
-        Integer keyIndex;
 
-        public Pair(Integer ringIndex, Integer keyIndex) {
+public class FreedomTrail {
+    static class Pair<T,I>{
+        Integer ringIndex;
+        Integer pairIndex;
+
+        public Pair(Integer ringIndex, Integer pairIndex) {
             this.ringIndex = ringIndex;
-            this.keyIndex = keyIndex;
+            this.pairIndex = pairIndex;
         }
     }
     public int findRotateSteps(String ring, String key) {
@@ -73,5 +75,9 @@ class FreedomTrail {
         int stepsBetween = Math.abs(curr - next);
         int stepsAround = ringLen - stepsBetween;
         return Math.min(stepsBetween, stepsAround);
+    }
+
+    public static void main(String[] args) {
+
     }
 }
