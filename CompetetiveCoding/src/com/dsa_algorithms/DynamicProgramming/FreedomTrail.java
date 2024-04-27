@@ -27,4 +27,8 @@ public class FreedomTrail {
         int step = Math.abs(j-i);
         return Math.min(step, n-step);
     }
+
+    public static void main(String[] args) {
+
+    }
 }
