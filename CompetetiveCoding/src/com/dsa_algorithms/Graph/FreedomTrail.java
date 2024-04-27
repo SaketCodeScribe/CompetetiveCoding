@@ -2,6 +2,15 @@ package com.dsa_algorithms.Graph;
 
 import java.util.*;
 class FreedomTrail {
+    static class Pair<T, I>{
+        Integer ringIndex;
+        Integer keyIndex;
+
+        public Pair(Integer ringIndex, Integer keyIndex) {
+            this.ringIndex = ringIndex;
+            this.keyIndex = keyIndex;
+        }
+    }
     public int findRotateSteps(String ring, String key) {
         int ringLen = ring.length();
         int keyLen = key.length();
