@@ -3,7 +3,6 @@ package com.dsa_algorithms.Graph;
 import java.util.*;
 
 public class SumOfDistancesInTree {
-
     List<List<Integer>> adj;
     int[] res, count;
     int n;
