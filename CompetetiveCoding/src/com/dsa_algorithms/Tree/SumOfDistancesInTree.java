@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SumOfDistancesInTree {
-
     List<List<Integer>> adj;
     int[] res, count;
     int n;
