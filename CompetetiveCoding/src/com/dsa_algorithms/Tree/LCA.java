@@ -1,33 +1,27 @@
 package com.dsa_algorithms.Tree;
 
 public class LCA {
-    static class TreeNode
+    static class TreeNode<T>
     {
-        int val;
-        TreeNode left;
-        TreeNode right;
+        T data;
+        TreeNode<T> left;
+        TreeNode<T> right;
 
-        TreeNode(int data) {
-            this.val = data;
+        TreeNode(T data) {
+            this.data = data;
             left = null;
             right = null;
         }
     }
-    TreeNode lca;
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        lca = null;
-        findLca(root, p, q);
-        return lca;
-    }
-    public boolean findLca(TreeNode root, TreeNode p, TreeNode q){
-        if(root == null)
-            return false;
-        boolean left = findLca(root.left, p, q);
-        boolean right = findLca(root.right, p, q);
-        if (((root.val == p.val || root.val == q.val) && (left || right)) || (left && right)){
-            lca = root;
-            return true;
-        }
-        return root.val == p.val || root.val == q.val;
+    public static int lowestCommonAncestor(TreeNode<Integer> root, int x, int y) {
+        if (root == null)
+            return -1;
+        int left = lowestCommonAncestor(root.left, x, y);
+        int right = lowestCommonAncestor(root.right, x, y);
+        if (left != -1 && right != -1)
+            return root.data;
+        if ((left != -1 || right != -1) && (root.data == x || root.data == y))
+            return root.data;
+        return root.data == x || root.data == y ? root.data : (left != -1 ? left : right);
     }
 }
