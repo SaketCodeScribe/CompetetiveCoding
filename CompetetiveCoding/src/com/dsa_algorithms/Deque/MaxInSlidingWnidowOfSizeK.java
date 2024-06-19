@@ -1,4 +1,4 @@
-package Deque;
+package com.dsa_algorithms.Deque;
 
 import java.util.*;
 
