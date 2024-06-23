@@ -48,13 +48,13 @@ public class BTTtoDLL {
     public static BinaryTreeNode<Integer> BTtoDLL1(BinaryTreeNode<Integer> root) {
         // Write your code here
         ans = prev = null;
-        convertDll(root);
+        convertDll1(root);
         return ans;
     }
     public static void convertDll1(BinaryTreeNode<Integer> root){
         if (root == null)
             return;
-        convertDll(root.left);
+        convertDll1(root.left);
         if (prev == null)
             ans = root;
         else{
@@ -62,6 +62,6 @@ public class BTTtoDLL {
             root.left = prev;
         }
         prev = root;
-        convertDll(root.right);
+        convertDll1(root.right);
     }
 }
