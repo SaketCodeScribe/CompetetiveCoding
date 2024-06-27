@@ -48,6 +48,7 @@ public class LRUCache {
             map.put(key, node);
         }
     }
+
     public void deleteNode(Node node){
         Node left = node.left, right = node.right;
         node.left = node.right = null;
