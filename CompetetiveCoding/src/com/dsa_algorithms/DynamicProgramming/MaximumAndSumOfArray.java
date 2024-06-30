@@ -1,5 +1,6 @@
 package com.dsa_algorithms.DynamicProgramming;
 
+import java.util.*;
 public class MaximumAndSumOfArray {
     int[][] dp;
     public int maximumANDSum(int[] coins, int slots) {
