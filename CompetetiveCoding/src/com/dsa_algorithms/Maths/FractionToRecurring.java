@@ -1,6 +1,7 @@
 package com.dsa_algorithms.Maths;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class FractionToRecurring {
     public String fractionToDecimal(int numerator, int denominator) {
