@@ -1,4 +1,4 @@
-package com.dsa_algorithms.LinkedList;
+package com.dsa_algorithms.LinkedList.CycleDetection;
 
 public class FindTheDuplicateNumbers {
     public int findDuplicate(int[] nums) {
