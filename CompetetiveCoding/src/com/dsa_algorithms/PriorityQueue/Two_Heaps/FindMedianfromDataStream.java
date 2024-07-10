@@ -1,4 +1,4 @@
-package com.dsa_algorithms.PriorityQueue;
+package com.dsa_algorithms.PriorityQueue.Two_Heaps;
 
 import java.util.*;
 
