@@ -1,4 +1,4 @@
-package com.dsa_algorithms.PriorityQueue;
+package com.dsa_algorithms.PriorityQueue.K_Largest;
 
 import java.util.*;
 public class KthLargestElement {
