@@ -1,4 +1,4 @@
-package com.dsa_algorithms.DynamicProgramming.Knapsack;
+package com.dsa_algorithms.DynamicProgramming.Edit_Distance;
 
 public class RegularExpression {
     public boolean isMatch(String s, String p) {
