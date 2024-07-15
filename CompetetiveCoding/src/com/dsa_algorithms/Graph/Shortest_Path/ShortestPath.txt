@@ -1,0 +1,7 @@
+You can attain shortest path using both BFS & DFS.
+Though DFS search would be not the most optimal solution. If you want to
+solve using DFS then you need to implement Iterative Deepening Search(IDS) i.e
+limit the depth of recursion.
+
+Note:
+dfs with memoizatioin will not result in the correct ans.
