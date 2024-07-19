@@ -1,4 +1,4 @@
-package com.dsa_algorithms.PrefixSum;
+package com.dsa_algorithms.Array.PrefixSum;
 
 public class MinimumLevelstoGainMorePoints {
     public int minimumLevels(int[] possible) {

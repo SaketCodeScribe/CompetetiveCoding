@@ -1,4 +1,4 @@
-package com.dsa_algorithms.PrefixSum;
+package com.dsa_algorithms.Array.PrefixSum;
 
 import java.util.ArrayList;
 import java.util.List;
