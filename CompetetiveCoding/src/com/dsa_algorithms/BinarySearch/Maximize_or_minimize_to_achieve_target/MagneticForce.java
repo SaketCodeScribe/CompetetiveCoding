@@ -1,4 +1,4 @@
-package com.dsa_algorithms.BinarySearch.Maximize_the_Minimize_of_Something;
+package com.dsa_algorithms.BinarySearch.Maximize_or_minimize_to_achieve_target;
 
 import java.util.*;
 public class MagneticForce {
