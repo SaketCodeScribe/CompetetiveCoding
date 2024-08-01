@@ -1,4 +1,4 @@
-package com.dsa_algorithms.BinarySearch;
+package com.dsa_algorithms.DivideAndConquer.searching;
 
 public class FindPivotinRotatedSortedArray {
     public int findMin(int[] nums) {
