@@ -1,5 +1,8 @@
 package com.dsa_algorithms.DynamicProgramming;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class BurstBalloon {
     public static int maxCoins(int[] nums) {
         int i, j, k, n = nums.length, mx;
@@ -17,6 +20,21 @@ public class BurstBalloon {
     }
 
     public static void main(String[] args) {
-        System.out.println(maxCoins(new int[]{3, 1, 5, 8}));
+
+//        System.out.println(maxCoins(new int[]{3, 1, 5, 8}));
+        List<checkme> arr = new ArrayList<>();
+        arr.add(new checkme(56));
+        print(arr);
+    }
+
+    private static void print(List<checkme> arr) {
+        System.out.println("--->"+arr.get(0).getClass().getName());
+    }
+
+    static class checkme{
+        int val;
+        public checkme(int val){
+            this.val = val;
+        }
     }
 }
