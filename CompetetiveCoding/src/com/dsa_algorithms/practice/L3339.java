@@ -2,37 +2,36 @@ package com.dsa_algorithms.practice;
 
 public class L3339 {
     private final int MOD = 1_000_000_007;
-    private int odd = 0, even = 0;
-    public static void main(String[] args) {
-
-    }
     public int countOfArrays(int n, int m, int k) {
-        odd = (m+1)>>1;
-        even = m>>1;
+        if (n == 1 && k == 0){
+            return m;
+        }
         Long[][][] dp = new Long[n][k+1][2];
-        return (int)(findTotCount(0, 1, k, n, dp)%MOD);
+
+        return (int)countOfArrays(n, m, k, 0, 0, dp);
     }
-    private Long findTotCount(int i, int state, int k, int n, Long[][][] dp){
+
+    private long countOfArrays(int n, int m, int k, int i, int parity, Long[][][] dp) {
+        int even = m/2, odd = m-even;
         if (i >= n){
-            return k > 0 ? 0L : 1L;
+            return k > 0 ? 0 : 1;
         }
-        if (dp[i][k][state] != null){
-            return dp[i][k][state];
+        if (dp[i][k][parity] != null){
+            return dp[i][k][parity];
         }
-        long result = odd*findTotCount(i+1, 1, k, n, dp);
+        long count = odd*countOfArrays(n, m, k, i+1, 0, dp);
         if (k == 0){
-            if (state == 1) {
-                result += even*findTotCount(i+1, 0, k, n, dp)%MOD;
+            if (parity == 0){
+                count = (count + even*countOfArrays(n, m, k, i+1, 1, dp))%MOD;
             }
         }
-        else{
-            if (state == 0){
-                result += even*findTotCount(i+1, 0, k-1, n, dp)%MOD;
-            }
-            else{
-                result += even*findTotCount(i+1, 0, k, n, dp)%MOD;
+        else {
+            if (parity == 1) {
+                count = (count + even * countOfArrays(n, m, k - 1, i + 1, 1, dp)) % MOD;
+            } else {
+                count = (count + even * countOfArrays(n, m, k, i + 1, 1, dp)) % MOD;
             }
         }
-        return dp[i][k][state] = result;
+        return dp[i][k][parity] = count;
     }
 }
