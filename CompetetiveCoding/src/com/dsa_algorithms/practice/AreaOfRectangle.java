@@ -104,16 +104,20 @@ public class AreaOfRectangle {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // Read the number of rectangles
-        int n = Integer.parseInt(br.readLine());
-        int[][] rectangles = new int[n][4];
+//        int n = Integer.parseInt(br.readLine());
+        int[][] rectangles = {
+                {999892931, 999974790, 6788622, 6788622},
+                {319710671, 963660807, 5518783, 5518783},
+                {623736653, 934759633, 4248549, 4248549},
+                {234214719, 848813522, 417010, 417010},
+                {154771654, 645515409, 9370045, 9370045},
+                {965571354, 998982755, 10809560, 10809560},
+                {338822522, 550588284, 12471651, 12471651},
+                {168193362, 682286828, 5173004, 5173004},
+                {459856474, 778674604, 5635628, 5635628},
+                {806653114, 860720237, 1444683, 1444683}
+        };
 
-        // Read each rectangle's coordinates
-        for (int i = 0; i < n; i++) {
-            String[] line = br.readLine().split(" ");
-            for (int j = 0; j < 4; j++) {
-                rectangles[i][j] = Integer.parseInt(line[j]);
-            }
-        }
         AreaOfRectangle obj = new AreaOfRectangle();
         System.out.println(obj.rectangleArea(rectangles));
     }
