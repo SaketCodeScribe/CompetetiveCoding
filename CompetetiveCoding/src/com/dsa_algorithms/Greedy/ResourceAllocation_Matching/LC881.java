@@ -5,32 +5,18 @@ import java.util.TreeMap;
 
 public class LC881 {
     public int numRescueBoats(int[] people, int limit) {
-        int n = people.length, i, boats = 0;
-        TreeMap<Integer, Integer> tree = new TreeMap<>();
+        int i = 0, j = people.length-1, boats = 0;
         Arrays.sort(people);
-        for(int p:people){
-            tree.put(p, tree.getOrDefault(p,0)+1);
-        }
 
-        for(i=0; i<n; i++){
-            if (tree.containsKey(people[i])){
-                Integer floorKey = tree.floorKey(limit-people[i]);
-                if (floorKey != null && (floorKey != people[i] || tree.get(floorKey) > 1)){
-                    if (tree.get(floorKey) == 1){
-                        tree.remove(floorKey);
-                    }
-                    else{
-                        tree.put(floorKey, tree.get(floorKey)-1);
-                    }
-                }
-                if (tree.get(people[i]) == 1){
-                    tree.remove(people[i]);
-                }
-                else{
-                    tree.put(people[i], tree.get(people[i])-1);
-                }
-                boats++;
+        while(i <= j){
+            if (people[i]+people[j] <= limit){
+                i++;
+                j--;
             }
+            else{
+                j--;
+            }
+            boats++;
         }
         return boats;
     }
