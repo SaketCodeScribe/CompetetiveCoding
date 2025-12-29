@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class LC756 {
+    //1. T.C - O(b^h) - no.of states * work per state. no of states = no of bases formed = for any i b^(h-i-1) = summation over i = b^h
+    // work per state = O(1). Hence, O(b^h)
+    //2. S.C - O(h^2) recursion depth(stack calls). h is ht, b is unique characters
     public boolean pyramidTransition(String bottom, List<String> allowed) {
         Map<String, List<Character>> map = new HashMap<>();
         Map<String, Boolean> dp = new HashMap<>();
