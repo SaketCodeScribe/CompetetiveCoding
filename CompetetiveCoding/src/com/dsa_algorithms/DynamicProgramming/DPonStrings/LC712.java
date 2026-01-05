@@ -17,10 +17,11 @@ public class LC712 {
                     dp[i][j] = dp[i-1][j] + s.charAt(i-1);
                 }
                 else{
-                    dp[i][j] = Math.min(dp[i][j-1] + t.charAt(j-1), dp[i-1][j] + s.charAt(i-1));
                     if (s.charAt(i-1) == t.charAt(j-1)){
-                        dp[i][j] = Math.min(dp[i][j], dp[i-1][j-1]);
+                        dp[i][j] = dp[i-1][j-1];
                     }
+                    else
+                        dp[i][j] = Math.min(dp[i][j-1] + t.charAt(j-1), dp[i-1][j] + s.charAt(i-1));
                 }
             }
         }
