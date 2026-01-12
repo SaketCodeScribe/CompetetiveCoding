@@ -1,8 +1,6 @@
 package com.dsa_algorithms.Tree.Traversal;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 public class LC417 {
 // 1. it would be much better to understand if we have two seperate vis array one for pacific and another for atlantic
