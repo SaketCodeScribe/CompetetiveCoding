@@ -1,18 +1,6 @@
 package com.dsa_algorithms.DynamicProgramming.OnTrees;
 
 public class LC337 {
-    static class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-    }
     public int rob(TreeNode root) {
         int[] robbery = solve(root);
         return Math.max(robbery[0], robbery[1]);
@@ -27,5 +15,18 @@ public class LC337 {
         int rightChildInc = right[0], rightChildExc = right[1];
 
         return new int[]{node.val + leftChildExc + rightChildExc, Math.max(leftChildInc, leftChildExc) + Math.max(rightChildInc, rightChildExc)};
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode() {}
+    TreeNode(int val) { this.val = val; }
+    TreeNode(int val, TreeNode left, TreeNode right) {
+        this.val = val;
+        this.left = left;
+        this.right = right;
     }
 }
