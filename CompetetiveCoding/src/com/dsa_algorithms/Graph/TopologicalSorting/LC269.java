@@ -1,5 +1,8 @@
 package com.dsa_algorithms.Graph.TopologicalSorting;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.*;
 
 public class LC269 {
@@ -61,7 +64,8 @@ public class LC269 {
         while(!queue.isEmpty()){
             int size = queue.size();
             while(size-- > 0){
-                int node = queue.poll();
+                Integer node = queue.poll();
+                assert node != null;
                 sb.append((char)(node + 'a'));
                 for(int child:adj.get(node)){
                     indegree[child]--;
