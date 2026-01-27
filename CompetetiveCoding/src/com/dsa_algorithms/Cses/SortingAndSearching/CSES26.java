@@ -1,4 +1,4 @@
-package com.dsa_algorithms.Cses;
+package com.dsa_algorithms.Cses.SortingAndSearching;
 
 import java.util.Arrays;
 import java.util.Scanner;

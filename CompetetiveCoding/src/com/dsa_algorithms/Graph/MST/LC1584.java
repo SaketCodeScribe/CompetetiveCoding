@@ -75,4 +75,43 @@ public class LC1584 {
         }
         return minCost;
     }
+    static interface intf{
+        default void m(){}
+        default void n(){}
+        void o();
+    }
+    static interface named{
+        public static void m(){}
+        void n();
+        void o();
+    }
+    abstract class absClass {
+        public void m(){
+
+        }
+    }
+    class abd extends absClass implements named{
+
+        @Override
+        public void n() {
+
+        }
+
+        @Override
+        public void o() {
+
+        }
+    }
+    class abc implements intf, named{
+
+        @Override
+        public void n() {
+            System.out.println();
+        }
+
+        @Override
+        public void o() {
+
+        }
+    }
 }

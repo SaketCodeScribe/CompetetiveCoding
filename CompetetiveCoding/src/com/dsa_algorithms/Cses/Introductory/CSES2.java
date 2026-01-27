@@ -1,4 +1,4 @@
-package com.dsa_algorithms.Cses;
+package com.dsa_algorithms.Cses.Introductory;
 
 import java.util.Scanner;
 
