@@ -1,4 +1,4 @@
-package com.dsa_algorithms.TwoPointer;
+package com.dsa_algorithms.BinarySearch;
 
 public class LC875 {
     public int minEatingSpeed(int[] piles, int h) {
