@@ -1,67 +1,43 @@
 package com.dsa_algorithms.SlidingWindow;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class LC76 {
     public String minWindow(String s, String t) {
-        int m = s.length(), n = t.length(), count = 0, i = 0, j = 0;
-        if (m == 0 || n == 0){
-            return "";
-        }
-        int[] freq = new int[52];
-        int[] freqInWindow = new int[52];
-        int unique = extractFrequency(t, freq);
-        int low = 0, high = Integer.MAX_VALUE;
+        int i = 0, j = 0, m = s.length(), start = 0, end = -1, formed = 0, required;
+        Map<Character, Integer> source = new HashMap<>();
+        Map<Character, Integer> target = new HashMap<>();
+        required = collect(t, target);
 
-        while(j < m || i < m){
-            int slide;
-            if ((slide = slideThroughWindow(s, i, j, count, unique, freq, freqInWindow)) != -1){
-                count--;
-                i = slide;
-                if (high - low > j - i + 1){
-                    low = i-1;
-                    high = j;
+        while (j < m) {
+            char currCh = s.charAt(j++);
+            target.computeIfPresent(currCh, (k, v) -> {
+                source.compute(k, (sk, sv) -> sv == null ? 1 : sv + 1);
+                return v;
+            });
+            if (target.getOrDefault(currCh, -1).equals(source.getOrDefault(currCh, 0))) formed++;
+
+            while (i < j && formed == required) {
+                if (end < start || j - i < end - start) {
+                    start = i;
+                    end = j;
                 }
+                char begCh = s.charAt(i++);
+                if (target.getOrDefault(begCh, -1).equals(source.getOrDefault(begCh, 0))) formed--;
+                source.computeIfPresent(begCh, (k, v) -> v - 1);
+                if (source.getOrDefault(begCh, -1) == 0) source.remove(begCh);
             }
-            if (j < m){
-                int curr = getIndex(s.charAt(j));
-                freqInWindow[curr]++;
-                if (freq[curr] > 0 && freqInWindow[curr] == freq[curr]){
-                    count++;
-                }
-                j++;
-            }
-            else break;
         }
-        return high == Integer.MAX_VALUE ? "" : s.substring(low, high);
+        return end > start ? s.substring(start, end) : "";
     }
-    private int extractFrequency(String word, int[] freq){
+
+    private int collect(String str, Map<Character, Integer> map) {
         int unique = 0;
-        for(char ch:word.toCharArray()){
-            int index = getIndex(ch);
-            freq[index]++;
-            if (freq[index] == 1){
+        for (char ch : str.toCharArray()) {
+            if (map.compute(ch, (k, v) -> v == null ? 1 : v + 1) == 1)
                 unique++;
-            }
         }
         return unique;
-    }
-
-    private int getIndex(Character ch){
-        return Character.isUpperCase(ch) ? (ch-'A')+26 : ch-'a';
-    }
-
-    private int slideThroughWindow(String s, int i, int j, int count, int unique, int[] freq, int[] freqInWindow){
-        if (count < unique){
-            return -1;
-        }
-        int curr;
-        while(i < j){
-            curr = getIndex(s.charAt(i));
-            freqInWindow[curr]--;
-            i++;
-            if (freq[curr] > 0 && freqInWindow[curr] < freq[curr]){
-                break;
-            }
-        }
-        return i;
     }
 }
