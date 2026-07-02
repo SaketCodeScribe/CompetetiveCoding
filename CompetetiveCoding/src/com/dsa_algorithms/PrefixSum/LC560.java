@@ -8,7 +8,7 @@ public class LC560 {
         int i, n = nums.length, ans = 0;
         long sum = 0;
         Map<Long, Integer> count = new HashMap<>();
-        count.put(0l, 1);
+        count.put(0L, 1);
 
         for(int num:nums){
             sum += num;
