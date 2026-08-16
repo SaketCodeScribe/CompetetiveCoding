@@ -1,6 +1,6 @@
 package com.dsa_algorithms.BackTracking;
 
-public class LC71 {
+public class LC79 {
     private static final int[][] DIRS = new int[][]{{-1, 0}, {1, 0}, {0, 1}, {0, -1}};
 
     public boolean exist(char[][] board, String word) {
